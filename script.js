@@ -19,15 +19,10 @@ class Collapse {
   _init() {
     if (this._triggerEl) {
       if (this._triggerEl.hasAttribute("aria-expanded")) {
-        this._visible =
-          this._triggerEl.getAttribute("aria-expanded") === "true"
-            ? true
-            : false;
+        this._visible = this._triggerEl.getAttribute("aria-expanded") === "true" ? true : false;
       } else {
         // fix until v2 not to break previous single collapses which became dismiss
-        this._visible = this._targetEl.classList.contains("hidden")
-          ? false
-          : true;
+        this._visible = this._targetEl.classList.contains("hidden") ? false : true;
       }
 
       this._triggerEl.addEventListener("click", () => {
@@ -71,11 +66,50 @@ window.Collapse = Collapse;
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-collapse-toggle]").forEach((triggerEl) => {
-    const targetEl = document.getElementById(
-      triggerEl.getAttribute("data-collapse-toggle")
-    );
+    const targetEl = document.getElementById(triggerEl.getAttribute("data-collapse-toggle"));
     new Collapse(targetEl, {
       triggerEl: triggerEl,
     });
   });
+});
+
+// Dark Mode
+
+var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+
+// Change the icons inside the button based on previous settings
+if (localStorage.getItem("color-theme") === "dark" || (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+  themeToggleLightIcon.classList.remove("hidden");
+} else {
+  themeToggleDarkIcon.classList.remove("hidden");
+}
+
+var themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", function () {
+  // toggle icons inside button
+  themeToggleDarkIcon.classList.toggle("hidden");
+  themeToggleLightIcon.classList.toggle("hidden");
+
+  // if set via local storage previously
+  if (localStorage.getItem("color-theme")) {
+    if (localStorage.getItem("color-theme") === "light") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
+    }
+
+    // if NOT set via local storage previously
+  } else {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
+    }
+  }
 });

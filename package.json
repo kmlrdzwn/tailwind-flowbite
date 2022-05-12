@@ -1,8 +1,7 @@
 {
-  "name": "tailwind",
+  "name": "tailwind-flowbite",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "script.js",
   "scripts": {
     "build": "npx tailwindcss -i ./tailwind.css -o ./style.css",
     "watch": "npx tailwindcss -i ./tailwind.css -o ./style.css --watch"
@@ -11,9 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.0.24"
-  },
-  "dependencies": {
+    "tailwindcss": "^3.0.24",
     "flowbite": "^1.4.5"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmlrdzwn/tailwind-flowbite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kmlrdzwn/tailwind-flowbite/issues"
+  },
+  "homepage": "https://github.com/kmlrdzwn/tailwind-flowbite#readme",
+  "description": ""
 }
