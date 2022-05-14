@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a.hover {
+  position: relative;
+}
+
+a.hover::before {
+  position: absolute;
+  width: 109%;
+  height: 1px;
+  background: currentColor;
+  top: 125%;
+  left: 0;
+  pointer-events: none;
+}
+a.hover::before {
+  content: "";
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+a.hover:hover:before {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
+  transition-timing-function: cubic-bezier(0.4, 1, 0.8, 1);
+}
+
+a.more:after {
+  line-height: 1;
+  font-family: Custom;
+  content: "→";
+  padding-left: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  vertical-align: 2px;
+  margin-right: -0.5rem;
+  display: inline-block;
+}
