@@ -2141,6 +2141,10 @@ a.more:after {
     margin-left: 4rem;
   }
 
+  .lg\:mr-16 {
+    margin-right: 4rem;
+  }
+
   .lg\:w-2\/3 {
     width: 66.666667%;
   }
