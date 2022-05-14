@@ -953,6 +953,11 @@ input:checked + .toggle-bg {
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .mr-3 {
   margin-right: 0.75rem;
 }
@@ -987,6 +992,14 @@ input:checked + .toggle-bg {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .block {
@@ -2085,6 +2098,15 @@ a.more:after {
     padding-bottom: 3rem;
   }
 
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .md\:pt-8 {
+    padding-top: 2rem;
+  }
+
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -2165,6 +2187,10 @@ a.more:after {
     width: 33.333333%;
   }
 
+  .lg\:w-9\/12 {
+    width: 75%;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -2212,6 +2238,10 @@ a.more:after {
 @media (min-width: 1280px) {
   .xl\:mt-4 {
     margin-top: 1rem;
+  }
+
+  .xl\:mt-10 {
+    margin-top: 2.5rem;
   }
 
   .xl\:w-5\/12 {
