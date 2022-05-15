@@ -15,6 +15,19 @@ module.exports = {
       borderRadius: {
         "4xl": "2rem",
       },
+      maxWidth: {
+        "8xl": "90rem",
+        "9xl": "105rem",
+        "10xl": "120rem",
+      },
+      zIndex: {
+        1: 1,
+        60: 60,
+        70: 70,
+        80: 80,
+        90: 90,
+        100: 100,
+      },
     },
   },
   variants: {
@@ -24,5 +37,5 @@ module.exports = {
       opacity: ["disabled"],
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [require("flowbite/plugin"), require("@tailwindcss/aspect-ratio"), require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
