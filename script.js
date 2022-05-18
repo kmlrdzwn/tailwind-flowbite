@@ -123,39 +123,42 @@ themeToggleBtn.addEventListener("click", function () {
 /* =======   Pricing Toggle  ======= */
 /* ================================= */
 
-// TODO: Clean
+// TODO: Refactor?
 
 const btnMonth = document.getElementById("btnMonth");
 const btnYear = document.getElementById("btnYear");
+
 const price1 = document.getElementById("price1");
 const price2 = document.getElementById("price2");
 const price3 = document.getElementById("price3");
-const duration1 = document.getElementById("duration1");
-const duration2 = document.getElementById("duration2");
-const duration3 = document.getElementById("duration3");
+
+const duration = document.querySelectorAll(".duration");
 
 btnMonth.addEventListener("click", () => {
-  btnMonth.classList.add("border-gray-200");
-  btnMonth.classList.add("bg-white");
-  btnYear.classList.remove("border-gray-200");
-  btnYear.classList.remove("bg-white");
-  price1.textContent = "RM50";
-  price2.textContent = "RM100";
-  price3.textContent = "RM300";
-  duration1.textContent = "/mo";
-  duration2.textContent = "/mo";
-  duration3.textContent = "/mo";
+  btnMonth.classList.add("border-gray-200", "bg-white");
+
+  btnYear.classList.remove("border-gray-200", "bg-white");
+
+  price1.innerText = "RM50";
+  price2.innerText = "RM100";
+  price3.innerText = "RM300";
+
+  duration.forEach((dur) => {
+    dur.innerText = "/month";
+  });
 });
 
 btnYear.addEventListener("click", () => {
-  btnYear.classList.add("border-gray-200");
-  btnYear.classList.add("bg-white");
-  btnMonth.classList.remove("border-gray-200");
-  btnMonth.classList.remove("bg-white");
-  price1.textContent = "RM500";
-  price2.textContent = "RM1000";
-  price3.textContent = "RM3000";
-  duration1.textContent = "/year";
-  duration2.textContent = "/year";
-  duration3.textContent = "/year";
+  btnYear.classList.add("border-gray-200", "bg-white");
+
+  btnMonth.classList.remove("border-gray-200", "bg-white");
+
+  price1.innerText = "RM500";
+  price2.innerText = "RM1000";
+  price3.innerText = "RM3000";
+
+  duration.forEach((dur) => {
+    console.log("clicked");
+    dur.innerText = "/year";
+  });
 });
