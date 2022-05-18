@@ -1,4 +1,7 @@
-// Collapse Class for NavBar
+/* ================================= */
+/* === Collapse Class for NavBar === */
+/* ========= From Flowbite ========= */
+/* ================================= */
 
 const Default = {
   triggerEl: null,
@@ -73,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Dark Mode
+/* ================================= */
+/* =========== Dark Mode =========== */
+/* ================================= */
 
 var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
 var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
@@ -112,4 +117,45 @@ themeToggleBtn.addEventListener("click", function () {
       localStorage.setItem("color-theme", "dark");
     }
   }
+});
+
+/* ================================= */
+/* =======   Pricing Toggle  ======= */
+/* ================================= */
+
+// TODO: Clean
+
+const btnMonth = document.getElementById("btnMonth");
+const btnYear = document.getElementById("btnYear");
+const price1 = document.getElementById("price1");
+const price2 = document.getElementById("price2");
+const price3 = document.getElementById("price3");
+const duration1 = document.getElementById("duration1");
+const duration2 = document.getElementById("duration2");
+const duration3 = document.getElementById("duration3");
+
+btnMonth.addEventListener("click", () => {
+  btnMonth.classList.add("border-gray-200");
+  btnMonth.classList.add("bg-white");
+  btnYear.classList.remove("border-gray-200");
+  btnYear.classList.remove("bg-white");
+  price1.textContent = "RM50";
+  price2.textContent = "RM100";
+  price3.textContent = "RM300";
+  duration1.textContent = "/mo";
+  duration2.textContent = "/mo";
+  duration3.textContent = "/mo";
+});
+
+btnYear.addEventListener("click", () => {
+  btnYear.classList.add("border-gray-200");
+  btnYear.classList.add("bg-white");
+  btnMonth.classList.remove("border-gray-200");
+  btnMonth.classList.remove("bg-white");
+  price1.textContent = "RM500";
+  price2.textContent = "RM1000";
+  price3.textContent = "RM3000";
+  duration1.textContent = "/year";
+  duration2.textContent = "/year";
+  duration3.textContent = "/year";
 });
