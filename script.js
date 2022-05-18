@@ -125,6 +125,14 @@ themeToggleBtn.addEventListener("click", function () {
 
 // TODO: Refactor?
 
+const litePerMonth = "RM50";
+const basicPerMonth = "RM100";
+const premiumPerMonth = "RM300";
+
+const litePerYear = "RM500";
+const basicPerYear = "RM1000";
+const premiumPerYear = "RM3000";
+
 const btnMonth = document.getElementById("btnMonth");
 const btnYear = document.getElementById("btnYear");
 
@@ -139,13 +147,11 @@ btnMonth.addEventListener("click", () => {
 
   btnYear.classList.remove("border-gray-200", "bg-white");
 
-  price1.innerText = "RM50";
-  price2.innerText = "RM100";
-  price3.innerText = "RM300";
+  price1.innerText = litePerMonth;
+  price2.innerText = basicPerMonth;
+  price3.innerText = premiumPerMonth;
 
-  duration.forEach((dur) => {
-    dur.innerText = "/month";
-  });
+  duration.forEach((dur) => (dur.innerText = "/month"));
 });
 
 btnYear.addEventListener("click", () => {
@@ -153,12 +159,9 @@ btnYear.addEventListener("click", () => {
 
   btnMonth.classList.remove("border-gray-200", "bg-white");
 
-  price1.innerText = "RM500";
-  price2.innerText = "RM1000";
-  price3.innerText = "RM3000";
+  price1.innerText = litePerYear;
+  price2.innerText = basicPerYear;
+  price3.innerText = premiumPerYear;
 
-  duration.forEach((dur) => {
-    console.log("clicked");
-    dur.innerText = "/year";
-  });
+  duration.forEach((dur) => (dur.innerText = "/year"));
 });
